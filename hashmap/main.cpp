@@ -7,6 +7,12 @@ public:
         next = NULL;
     };
 
+    Bucket(const Bucket& b) {
+        value = b.value;
+        key = b.key;
+        next = b.next;
+    }
+
     K getKey() const {
         return key;
     }
@@ -41,7 +47,7 @@ public:
     }
 
     HashMap(const HashMap& hm) {
-        table = hm.table;
+        table = new Bucket<K, V> *[MAX_BUCKETS](hm.table);
         cout << "copy\n";
     }
 
@@ -59,6 +65,7 @@ public:
                 delete cur;
                 cur = nxt;
             }
+            cur = NULL;
         }
         delete[] table;
         cout << "destruct\n";
@@ -127,6 +134,7 @@ int main() {
     mp.set(1, 3);
     //mp[1] = 3;
     HashMap<int, int> mp2(mp);
-    cout << mp2[1] << " " << mp2[2];
+    mp2.set(1, 4);
+    cout << mp[1] << " " << mp2[2];
     return 0;
 }
