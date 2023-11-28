@@ -1,3 +1,3 @@
-C:/Users/alika/mahsan/hashmap/cmake-build-debug/CMakeFiles/hashmap.dir
-C:/Users/alika/mahsan/hashmap/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/alika/mahsan/hashmap/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/hadi/CLionProjects/mahsan/hashmap/cmake-build-debug/CMakeFiles/hashmap.dir
+/home/hadi/CLionProjects/mahsan/hashmap/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/hadi/CLionProjects/mahsan/hashmap/cmake-build-debug/CMakeFiles/rebuild_cache.dir

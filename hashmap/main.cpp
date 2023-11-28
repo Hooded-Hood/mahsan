@@ -56,7 +56,6 @@ public:
                 this->set(cur->getKey(), cur->getValue());
                 cur = cur->getNext();
             }
-            cur = NULL;
         }
         cout << "copy\n";
     }
@@ -74,7 +73,6 @@ public:
                 delete cur;
                 cur = nxt;
             }
-            cur = NULL;
         }
         delete[] table;
         cout << "destruct\n";
@@ -106,21 +104,25 @@ public:
         Bucket<K, V> *node = table[index]; // aya mishe ba refrence zad beja pointer?
         if (node == NULL) { // bucket is empty
             table[index] = new Bucket<K, V>(key, value);
+            delete node;
             return;
         }
         if (node->getKey() == key) { // it is head od bucket
             node->setValue(value);
             table[index] = new Bucket<K, V>(key, value);
+            delete node;
             return;
         }
         while (node->getNext() != NULL) { // it is somewhere else
             if (node->getNext()->getKey() == key) {
                 node->getNext()->setValue(value);
+                delete node;
                 return;
             }
             node = node->getNext();
         }
         node->setNext(new Bucket<K, V>(key, value)); // it doesn't exists
+        delete node;
     } // ye nokte jazabi ke dare ke sare debugesh dahanam sevice shod inke nmitoonam khod node ro set kona
     // fek konam chon engar vaghan be oon khoone eshare nmikone dar hali ke nextesh mikone
 
