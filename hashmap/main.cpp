@@ -1,4 +1,6 @@
 #include <iostream>
+#include <vector>
+
 using namespace std;
 
 template <typename K, typename V> class Bucket{
@@ -47,14 +49,21 @@ public:
     }
 
     HashMap(const HashMap& hm) {
-        table = new Bucket<K, V> *[MAX_BUCKETS](hm.table);
+        table = new Bucket<K, V> *[MAX_BUCKETS]();
+        for (int i = 0; i < MAX_BUCKETS; i++) {
+            Bucket<K, V> *cur = hm.table[i];
+            while (cur != NULL) {
+                this->set(cur->getKey(), cur->getValue());
+                cur = cur->getNext();
+            }
+            cur = NULL;
+        }
         cout << "copy\n";
     }
 
-    HashMap(HashMap&& hm) {
-        table = hm.table;
-        cout << "move\n";
+    HashMap(HashMap&& hm) : table(hm.table) {
         hm.table = nullptr;
+        cout << "move\n";
     }
 
     virtual ~HashMap() {
@@ -127,6 +136,11 @@ private:
     //F hashFunc; // age khastim az function dasti betoonim estefade konim
 };
 
+HashMap<int, int> fun(HashMap<int, int> mp) {
+    HashMap<int, int> mpt;
+    mpt.set(1, mp[1]);
+    return mpt;
+}
 int main() {
     HashMap<int, int> mp;
     mp.set(1, 6);
@@ -136,5 +150,11 @@ int main() {
     HashMap<int, int> mp2(mp);
     mp2.set(1, 4);
     cout << mp[1] << " " << mp2[2];
+    HashMap<int, int> mp3 = fun(mp);
+    cout << mp3[1] << " " << fun(mp2)[1];
+    vector<HashMap<int, int>> vec;
+    vec.push_back(mp);
+    cout << "checkpoint";
+    vec.push_back(fun(mp2));
     return 0;
 }
