@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <unordered_map>
 
 using namespace std;
 
@@ -41,7 +42,7 @@ private:
     Bucket *next;
 };
 
-template <typename K, typename V/*, typename F = KeyHash<K>*/> class HashMap {
+template <typename K, typename V, typename F = hash<K>> class HashMap {
 public:
     HashMap() {
         table = new Bucket<K, V> *[MAX_BUCKETS]();
@@ -61,11 +62,14 @@ public:
     }
 
     HashMap(HashMap&& hm) : table(hm.table) {
-        hm.table = nullptr;
+        hm.table = NULL;
         cout << "move\n";
     }
 
     virtual ~HashMap() {
+        if (table == NULL) {
+            return;
+        }
         for (int i = 0; i < MAX_BUCKETS; i++) {
             Bucket<K, V> *cur = table[i];
             while (cur != NULL) {
@@ -78,12 +82,15 @@ public:
         cout << "destruct\n";
     }
 
-    int hashFunction(const K& key) const { // chera static nmishe
-        return (int) key % MAX_BUCKETS;
+
+    int hashFunction(const K& key) const { // chera static nmishe // fek konam chon be K , V vabastas
+        auto fun = unordered_map<K, V>().hash_function();
+        return ((long long) fun(key)) % MAX_BUCKETS;
     }
 
+
     V get(const K& key) const {
-        int index = hashFunction(key);
+        int index = hashFunc(key) % MAX_BUCKETS;
         Bucket<K, V> *node = table[index];
         while (node != NULL) {
             if (node->getKey() == key) {
@@ -100,7 +107,7 @@ public:
     }
 
     void set(const K& key, const V& value) {
-        int index = hashFunction(key);
+        int index = hashFunc(key) % MAX_BUCKETS;
         Bucket<K, V> *node = table[index]; // aya mishe ba refrence zad beja pointer?
         if (node == NULL) { // bucket is empty
             table[index] = new Bucket<K, V>(key, value);
@@ -133,13 +140,14 @@ public:
 */
 
 private:
-    int MAX_BUCKETS = 1e6;
+    static const int MAX_BUCKETS = 100;
     Bucket<K, V> **table;
-    //F hashFunc; // age khastim az function dasti betoonim estefade konim
+    F hashFunc = unordered_map<K, V>().hash_function(); // age khastim az function dasti betoonim estefade konim
 };
 
 HashMap<int, int> fun(HashMap<int, int> mp) {
     HashMap<int, int> mpt;
+    mp.set(1, 12);
     mpt.set(1, mp[1]);
     return mpt;
 }
@@ -148,6 +156,11 @@ int main() {
     mp.set(1, 6);
     mp.set(2, 5);
     mp.set(1, 3);
+    /*mp.set(101, 100);
+    mp.set(201, 200);
+    mp.set(302, 400);
+    cout << mp[1] << " " << mp[2] << " " << mp[101] << " " << mp[201] << " " << mp[302] << '\n';
+    */
     //mp[1] = 3;
     HashMap<int, int> mp2(mp);
     mp2.set(1, 4);
@@ -158,5 +171,9 @@ int main() {
     vec.push_back(mp);
     cout << "checkpoint";
     vec.push_back(fun(mp2));
+    cout << mp[1];
+    HashMap<string, int> shm;
+    shm.set("hey", 222);
+    cout << shm["key"];
     return 0;
 }
