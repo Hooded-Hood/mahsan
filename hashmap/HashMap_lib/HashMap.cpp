@@ -145,4 +145,17 @@ void HashMap<K, V, F>::sizeUp() {
         }
     }
     table = newTable;
+    if (table != NULL) {
+        for (int i = 0; i < capacity; i++) {
+            Bucket<K, V> *cur = table[i];
+            while (cur != NULL) {
+                Bucket<K, V> *nxt = cur->getNext();
+                delete cur;
+                cur = nxt;
+            }
+        }
+        delete[] table;
+    }
+    table = newTable;
+    delete newTable;
 }
