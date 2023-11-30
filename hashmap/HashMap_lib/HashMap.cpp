@@ -157,5 +157,5 @@ void HashMap<K, V, F>::sizeUp() {
         delete[] table;
     }
     table = newTable;
-    delete newTable;
+    delete[] newTable;
 }
