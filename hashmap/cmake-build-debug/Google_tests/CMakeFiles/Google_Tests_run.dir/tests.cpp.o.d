@@ -273,4 +273,6 @@ Google_tests/CMakeFiles/Google_Tests_run.dir/tests.cpp.o: \
  /home/hadi/CLionProjects/mahsan/hashmap/Google_tests/lib/googletest/include/gtest/gtest-test-part.h \
  /home/hadi/CLionProjects/mahsan/hashmap/Google_tests/lib/googletest/include/gtest/gtest-typed-test.h \
  /home/hadi/CLionProjects/mahsan/hashmap/Google_tests/lib/googletest/include/gtest/gtest_pred_impl.h \
- /home/hadi/CLionProjects/mahsan/hashmap/Google_tests/lib/googletest/include/gtest/gtest_prod.h
+ /home/hadi/CLionProjects/mahsan/hashmap/Google_tests/lib/googletest/include/gtest/gtest_prod.h \
+ /home/hadi/CLionProjects/mahsan/hashmap/Google_tests/../HashMap_lib/HashMap.h \
+ /home/hadi/CLionProjects/mahsan/hashmap/Google_tests/../HashMap_lib/Bucket.h

@@ -386,6 +386,18 @@
 			<Option target="hashmap"/>
 			<Option target="Google_Tests_run"/>
 		</Unit>
+		<Unit filename="/home/hadi/CLionProjects/mahsan/hashmap/HashMap_lib/Bucket.cpp">
+			<Option target="hashmap"/>
+		</Unit>
+		<Unit filename="/home/hadi/CLionProjects/mahsan/hashmap/HashMap_lib/Bucket.h">
+			<Option target="hashmap"/>
+		</Unit>
+		<Unit filename="/home/hadi/CLionProjects/mahsan/hashmap/HashMap_lib/HashMap.cpp">
+			<Option target="hashmap"/>
+		</Unit>
+		<Unit filename="/home/hadi/CLionProjects/mahsan/hashmap/HashMap_lib/HashMap.h">
+			<Option target="hashmap"/>
+		</Unit>
 		<Unit filename="/home/hadi/CLionProjects/mahsan/hashmap/main.cpp">
 			<Option target="hashmap"/>
 		</Unit>

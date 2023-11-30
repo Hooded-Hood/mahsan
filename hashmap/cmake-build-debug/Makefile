@@ -263,6 +263,54 @@ Google_tests/tests.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/hashmap.dir/build.make CMakeFiles/hashmap.dir/Google_tests/tests.cpp.s
 .PHONY : Google_tests/tests.cpp.s
 
+HashMap_lib/Bucket.o: HashMap_lib/Bucket.cpp.o
+.PHONY : HashMap_lib/Bucket.o
+
+# target to build an object file
+HashMap_lib/Bucket.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hashmap.dir/build.make CMakeFiles/hashmap.dir/HashMap_lib/Bucket.cpp.o
+.PHONY : HashMap_lib/Bucket.cpp.o
+
+HashMap_lib/Bucket.i: HashMap_lib/Bucket.cpp.i
+.PHONY : HashMap_lib/Bucket.i
+
+# target to preprocess a source file
+HashMap_lib/Bucket.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hashmap.dir/build.make CMakeFiles/hashmap.dir/HashMap_lib/Bucket.cpp.i
+.PHONY : HashMap_lib/Bucket.cpp.i
+
+HashMap_lib/Bucket.s: HashMap_lib/Bucket.cpp.s
+.PHONY : HashMap_lib/Bucket.s
+
+# target to generate assembly for a file
+HashMap_lib/Bucket.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hashmap.dir/build.make CMakeFiles/hashmap.dir/HashMap_lib/Bucket.cpp.s
+.PHONY : HashMap_lib/Bucket.cpp.s
+
+HashMap_lib/HashMap.o: HashMap_lib/HashMap.cpp.o
+.PHONY : HashMap_lib/HashMap.o
+
+# target to build an object file
+HashMap_lib/HashMap.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hashmap.dir/build.make CMakeFiles/hashmap.dir/HashMap_lib/HashMap.cpp.o
+.PHONY : HashMap_lib/HashMap.cpp.o
+
+HashMap_lib/HashMap.i: HashMap_lib/HashMap.cpp.i
+.PHONY : HashMap_lib/HashMap.i
+
+# target to preprocess a source file
+HashMap_lib/HashMap.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hashmap.dir/build.make CMakeFiles/hashmap.dir/HashMap_lib/HashMap.cpp.i
+.PHONY : HashMap_lib/HashMap.cpp.i
+
+HashMap_lib/HashMap.s: HashMap_lib/HashMap.cpp.s
+.PHONY : HashMap_lib/HashMap.s
+
+# target to generate assembly for a file
+HashMap_lib/HashMap.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hashmap.dir/build.make CMakeFiles/hashmap.dir/HashMap_lib/HashMap.cpp.s
+.PHONY : HashMap_lib/HashMap.cpp.s
+
 main.o: main.cpp.o
 .PHONY : main.o
 
@@ -308,6 +356,12 @@ help:
 	@echo "... Google_tests/tests.o"
 	@echo "... Google_tests/tests.i"
 	@echo "... Google_tests/tests.s"
+	@echo "... HashMap_lib/Bucket.o"
+	@echo "... HashMap_lib/Bucket.i"
+	@echo "... HashMap_lib/Bucket.s"
+	@echo "... HashMap_lib/HashMap.o"
+	@echo "... HashMap_lib/HashMap.i"
+	@echo "... HashMap_lib/HashMap.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
