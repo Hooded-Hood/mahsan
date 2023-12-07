@@ -239,30 +239,6 @@ gtest_main/fast:
 	$(MAKE) $(MAKESILENT) -f Google_tests/lib/googletest/CMakeFiles/gtest_main.dir/build.make Google_tests/lib/googletest/CMakeFiles/gtest_main.dir/build
 .PHONY : gtest_main/fast
 
-Google_tests/tests.o: Google_tests/tests.cpp.o
-.PHONY : Google_tests/tests.o
-
-# target to build an object file
-Google_tests/tests.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/hashmap.dir/build.make CMakeFiles/hashmap.dir/Google_tests/tests.cpp.o
-.PHONY : Google_tests/tests.cpp.o
-
-Google_tests/tests.i: Google_tests/tests.cpp.i
-.PHONY : Google_tests/tests.i
-
-# target to preprocess a source file
-Google_tests/tests.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/hashmap.dir/build.make CMakeFiles/hashmap.dir/Google_tests/tests.cpp.i
-.PHONY : Google_tests/tests.cpp.i
-
-Google_tests/tests.s: Google_tests/tests.cpp.s
-.PHONY : Google_tests/tests.s
-
-# target to generate assembly for a file
-Google_tests/tests.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/hashmap.dir/build.make CMakeFiles/hashmap.dir/Google_tests/tests.cpp.s
-.PHONY : Google_tests/tests.cpp.s
-
 HashMap_lib/Bucket.o: HashMap_lib/Bucket.cpp.o
 .PHONY : HashMap_lib/Bucket.o
 
@@ -353,9 +329,6 @@ help:
 	@echo "... gtest"
 	@echo "... gtest_main"
 	@echo "... hashmap"
-	@echo "... Google_tests/tests.o"
-	@echo "... Google_tests/tests.i"
-	@echo "... Google_tests/tests.s"
 	@echo "... HashMap_lib/Bucket.o"
 	@echo "... HashMap_lib/Bucket.i"
 	@echo "... HashMap_lib/Bucket.s"

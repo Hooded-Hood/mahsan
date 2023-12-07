@@ -383,7 +383,6 @@
 			<Option target="gtest_main"/>
 		</Unit>
 		<Unit filename="/home/hadi/CLionProjects/mahsan/hashmap/Google_tests/tests.cpp">
-			<Option target="hashmap"/>
 			<Option target="Google_Tests_run"/>
 		</Unit>
 		<Unit filename="/home/hadi/CLionProjects/mahsan/hashmap/HashMap_lib/Bucket.cpp">
