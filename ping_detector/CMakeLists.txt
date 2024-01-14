@@ -15,7 +15,6 @@ add_executable("${PROJECT_NAME}" main.cpp
 
 set(PcapPlusPlus_DIR "~/CLionProjects/ping_detector/pcapplusplus-23.09-ubuntu-22.04-gcc-11.2.0-x86_64/lib/cmake/pcapplusplus")
 
-
 message("Compiling Tutorial out of project")
 find_package(PcapPlusPlus REQUIRED)
 include_directories(${PcapPlusPlus_INCLUDE_DIRS})
@@ -31,4 +30,3 @@ target_include_directories("${PROJECT_NAME}" PRIVATE ${SDL2_INCLUDE_DIRS})
 target_link_libraries("${PROJECT_NAME}" PRIVATE ${SDL2_LIBRARIES})
 
 target_link_libraries("${PROJECT_NAME}" PRIVATE SDL2_mixer)
-
